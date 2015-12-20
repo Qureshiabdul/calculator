@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="calculator" default="all">
+    <target name="all" depends="clean, compile, sleep, jar"/>
+
+    <target name="clean">
+        <delete dir="target" quiet="true" />
+    </target>
+
+    <target name="compile">
+        <mkdir dir="target/classes"/>
+        <javac srcdir="src" destdir="target/classes" includeantruntime="false" compiler="modern" />
+    </target>
+
+    <target name="sleep">
+        <echo message="Sleeping for a while so you can see the build in the new dashboard" />
+        <sleep seconds="60" />
+    </target>
+
+   
+    <target name="jar" depends="compile">
+    	<delete file = "calculator.jar"/>
+		<delete file = "MANIFEST.MF"/>
+        
+        <jar jarfile="target/calculator.jar" basedir="target/classes">
+        <manifest>
+        <attribute name="Main-Class" value="Frame1" />
+      	</manifest>
+      	</jar>
+    </target>
+</project>
