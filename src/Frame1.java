@@ -108,4 +108,5 @@ public class Frame1 {
 		lblNewLabel.setBounds(72, 170, 92, 14);
 		frame.getContentPane().add(lblNewLabel);
 	}
+	System.out.println("Error introduced her");
 }
